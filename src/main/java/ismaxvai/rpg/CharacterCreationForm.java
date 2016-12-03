@@ -4,43 +4,60 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CharacterCreationForm {
-	private List<Skill> form; 
-	private List<String> aptitudes;
+	private List<Skill> createdForm;
+	private List<String> createdAptitudes;
 	
 	
-	public List<Skill> getForm() {
-		return form;
+	public List<String> getCreatedAptitudes() {
+		return createdAptitudes;
 	}
 
-	public void setForm(List<Skill> form) {
-		this.form = form;
+	public void setCreatedAptitudes(List<String> aptitudes) {
+		this.createdAptitudes = aptitudes;
+	}
+
+	public List<Skill> getCreatedForm() {
+		return createdForm;
+	}
+
+	public void setCreatedForm(List<Skill> form) {
+		this.createdForm = form;
 	}
 
 	CharacterCreationForm(){
-		form = new ArrayList<Skill>();
-		aptitudes = new ArrayList<String>();
+		createdForm = new ArrayList<Skill>();
+		createdAptitudes = new ArrayList<String>();
 	}
 	
 	public void addSkill(String skill, int min, int max){ 
 		//NO ES POT REPETIR EL NOM
 		Skill s = new Skill(skill, min, max);
-		form.add(s);
+		createdForm.add(s);
 	}
 	
 	public void addAptitude(String aptitude){
-		aptitudes.add(aptitude);
+		createdAptitudes.add(aptitude);
 	}
 	
 	//retorna 0 si no puede borrar
 	public int deleteSkill(String name){
-		int size = form.size();
+		int size = createdForm.size();
 		for(int i = 0; i < size; ++i){
-			if(form.get(i).getSkilName() == name) {
-				form.remove(form.get(i).getSkilName());
+			if(createdForm.get(i).getSkilName() == name) {
+				createdForm.remove(createdForm.get(i).getSkilName());
 				return 1;
 			}
 		}
 		return 0;
+	}
+	
+	public void increaseSkill(String name){
+		int size = createdForm.size();
+		for(int i = 0; i < size; ++i){
+			if(createdForm.get(i).getSkilName() == name) {
+				createdForm.get(i).increaseSkill();
+			}
+		}
 	}
 }
 

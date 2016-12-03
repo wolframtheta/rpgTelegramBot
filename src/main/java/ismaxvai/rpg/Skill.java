@@ -4,13 +4,14 @@ public class Skill {
 	private String skillName;
 	private int min;
 	private int max;
+	private int actual;
 	
-	Skill(String skill,int mn, int mx){
-		skillName = skill;
-		mn = min;
-		mx = max;
+	public int getActual() {
+		return actual;
 	}
-	
+	public void setActual(int actual) {
+		this.actual = actual;
+	}
 	public String getSkilName() {
 		return skillName;
 	}
@@ -28,5 +29,16 @@ public class Skill {
 	}
 	public void setMax(int max) {
 		this.max = max;
+	}
+	
+	Skill(String skill,int mn, int mx){
+		skillName = skill;
+		mn = min;
+		actual = min;
+		mx = max;
+	}
+	
+	public void increaseSkill(){ //MIRAR QUE ACTUAL NO SIGUI IGUAL O MAJOR QUE MAX
+		++actual;
 	}
 }
