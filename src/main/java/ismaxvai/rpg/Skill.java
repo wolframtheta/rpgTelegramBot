@@ -5,17 +5,26 @@ public class Skill {
 	private int min;
 	private int max;
 	private int actual;
+	private int id;
 	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	public int getActual() {
 		return actual;
 	}
-	public void setActual(int actual) {
+	public int setActual(int actual) {
+		if(actual > min) return -6;
 		this.actual = actual;
+		return 0;
 	}
 	public String getSkilName() {
 		return skillName;
 	}
-	public void setSkill(String skillName) {
+	public void setSkillName(String skillName) {
 		this.skillName = skillName;
 	}
 	public int getMin() {
@@ -31,11 +40,11 @@ public class Skill {
 		this.max = max;
 	}
 	
-	Skill(String skill,int mn, int mx){
-		skillName = skill;
-		mn = min;
-		actual = min;
-		mx = max;
+	Skill(String skillName,int min, int max, int id){
+		this.skillName = skillName;
+		this.min = this.actual = min;
+		this.max = max;
+		this.id = id;
 	}
 	
 	public void increaseSkill(){ //MIRAR QUE ACTUAL NO SIGUI IGUAL O MAJOR QUE MAX

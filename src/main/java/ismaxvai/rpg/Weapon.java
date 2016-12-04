@@ -14,8 +14,8 @@ public class Weapon extends Item{
 	}
 
 
-	Weapon(String n, int qtty, String desc, int atck) {
-		super(n, qtty, desc);
+	Weapon(String n, int qtty, String desc, int atck, int id) {
+		super(n, qtty, desc, id);
 		attack = atck;
 	}
 	

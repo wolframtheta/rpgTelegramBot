@@ -9,8 +9,8 @@ public class Usable extends Item{
 	public void setUses(int uses) {
 		this.uses = uses;
 	}
-	Usable(String n, int qtty, String desc, int us) {
-		super(n, qtty, desc);
+	Usable(String n, int qtty, String desc, int us, int id) {
+		super(n, qtty, desc, id);
 		uses = us;
 	}
 	//--------------------------------------------------

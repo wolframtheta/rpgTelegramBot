@@ -4,8 +4,16 @@ public class Item {
 	private String name;
 	private int quantity;
 	private String description;
+	private int id;
 	
-	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -30,10 +38,11 @@ public class Item {
 		this.description = description;
 	}
 	
-	Item(String n, int qtty, String desc){
-		name = n;
-		quantity = qtty;
-		description = desc;
+	Item(String name, int quantity, String description, int id){
+		this.name = name;
+		this.quantity = quantity;
+		this.description = description;
+		this.id = id;
 	}
 	
 }

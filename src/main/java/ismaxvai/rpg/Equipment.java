@@ -11,8 +11,8 @@ public class Equipment extends Item {
 		this.defence = defence;
 	}
 
-	Equipment(String n, int qtty, String desc,int def) {
-		super(n, qtty, desc);
+	Equipment(String n, int qtty, String desc,int def, int id) {
+		super(n, qtty, desc, id);
 		defence = def;
 	}
 
