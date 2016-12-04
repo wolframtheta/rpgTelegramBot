@@ -62,5 +62,7 @@ public class CreatePlayer {
 		form = f;
 	}
 	
-	
+	public void setSkill(String name, int value){
+		form.setSkill(name, value);
+	}
 }

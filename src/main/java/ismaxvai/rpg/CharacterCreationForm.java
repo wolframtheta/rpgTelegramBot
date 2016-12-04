@@ -51,11 +51,11 @@ public class CharacterCreationForm {
 		return 0;
 	}
 	
-	public void increaseSkill(String name){
+	public void setSkill(String name, int value){
 		int size = createdForm.size();
 		for(int i = 0; i < size; ++i){
 			if(createdForm.get(i).getSkilName() == name) {
-				createdForm.get(i).increaseSkill();
+				createdForm.get(i).setActual(value);
 			}
 		}
 	}
