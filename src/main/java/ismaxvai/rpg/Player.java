@@ -16,6 +16,59 @@ public class Player {
 	private int feet;
 	private int arms;
 	private int chest;
+	private int defence;
+	private int attack;
+	private int right;
+	private int left;
+	
+	public int getHead() {
+		return head;
+	}
+	public void setHead(int head) {
+		this.head = head;
+	}
+	public int getFeet() {
+		return feet;
+	}
+	public void setFeet(int feet) {
+		this.feet = feet;
+	}
+	public int getArms() {
+		return arms;
+	}
+	public void setArms(int arms) {
+		this.arms = arms;
+	}
+	public int getChest() {
+		return chest;
+	}
+	public void setChest(int chest) {
+		this.chest = chest;
+	}
+	public int getDefence() {
+		return defence;
+	}
+	public void setDefence(int defence) {
+		this.defence = defence;
+	}
+	public int getAttack() {
+		return attack;
+	}
+	public void setAttack(int attack) {
+		this.attack = attack;
+	}
+	public int getRight() {
+		return right;
+	}
+	public void setRight(int right) {
+		this.right = right;
+	}
+	public int getLeft() {
+		return left;
+	}
+	public void setLeft(int left) {
+		this.left = left;
+	}
 	
 	public HashMap<Integer, Item> getInventory() {
 		return inventory;
@@ -81,7 +134,7 @@ public class Player {
 		hp = h;
 		form = f;
 		id = i;
-		head = arms = feet = chest = 0;
+		head = arms = feet = chest = defence = attack = right = left = 0;
 		inventory = new HashMap<Integer, Item>();
 	}
 	
@@ -110,34 +163,54 @@ public class Player {
 		return 0;
 	}
 	
-	public int equipCasc(Item it){
+	public int equipCasc(Equipment it){
 		if (property(it)) return -5;
 		if(head == 0) head = it.getId();
 		else return -4;
+		defence += it.getDefence();
 		return 0;
 	}
 	
-	public int equipArmor(Item it){
+	public int equipArmor(Equipment it){
 		if (property(it)) return -5;
 		if(chest == 0) chest = it.getId();
 		else return -4;
+		defence += it.getDefence();
 		return 0;
 	}
 	
-	public int equipBoots(Item it){
+	public int equipBoots(Equipment it){
 		if (property(it)) return -5;
 		if(feet == 0) feet = it.getId();
 		else return -4;
+		defence += it.getDefence();
 		return 0;
 	}
 	
-	public int equipArmbands(Item it){
+	public int equipArmbands(Equipment it){
 		if (property(it)) return -5;
 		if(arms == 0) arms = it.getId();
 		else return -4;
+		defence += it.getDefence();
 		return 0;
 	}
 
+	public int equipRight(Weapon we){
+		if (property(we)) return -5;
+		if(right == 0) right = we.getId();
+		else return -4;
+		attack += we.getAttack();
+		return 0;
+	}
+	
+	public int equipLeft(Weapon we){
+		if (property(we)) return -5;
+		if(left == 0)left = we.getId();
+		else return -4;
+		attack += we.getAttack();
+		return 0;
+	}
+	
 	public void unequipCasc(){
 		head = 0;
 	}
@@ -154,6 +227,18 @@ public class Player {
 		arms = 0;
 	}
 
+	public void unequipLeft(){
+		left = 0;
+	}
+	
+	public void unequipRight(){
+		right = 0;
+	}
+	
+	public void unequipHands(){
+		right = left = 0;
+	}
+	
 	public void unequipEverything(){
 		head = chest = feet= arms = 0;
 	}

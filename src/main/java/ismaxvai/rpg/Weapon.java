@@ -2,8 +2,19 @@ package ismaxvai.rpg;
 
 public class Weapon extends Item{
 	private int attack;
+	private boolean oneHand;
 	
 	
+	public boolean isOneHand() {
+		return oneHand;
+	}
+
+
+	public void setOneHand(boolean oneHand) {
+		this.oneHand = oneHand;
+	}
+
+
 	public int getAttack() {
 		return attack;
 	}
@@ -14,9 +25,10 @@ public class Weapon extends Item{
 	}
 
 
-	Weapon(String n, int qtty, String desc, int atck, int id) {
+	Weapon(String n, int qtty, String desc, int atck, int id, boolean oneHand) {
 		super(n, qtty, desc, id);
-		attack = atck;
+		this.attack = attack;
+		this.oneHand = oneHand;
 	}
 	
 }
