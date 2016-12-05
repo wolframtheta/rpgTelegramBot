@@ -1,6 +1,8 @@
 package ismaxvai.rpg;
 
-public class CreatePlayer {
+import java.util.HashMap;
+
+public class Player {
 	private String name;
 	private String race;
 	private int age;
@@ -8,6 +10,7 @@ public class CreatePlayer {
 	private String story;
 	private int hp;
 	private CharacterCreationForm form;
+	private HashMap<Integer, Item> inventary;
 	
 	public CharacterCreationForm getForm() {
 		return form;
@@ -52,7 +55,7 @@ public class CreatePlayer {
 		this.hp = hp;
 	}
 	
-	CreatePlayer(String n, String r, int a, String desc, String stry, int h, CharacterCreationForm f){
+	Player(String n, String r, int a, String desc, String stry, int h, CharacterCreationForm f){
 		name = n;
 		race = r;
 		age = a;

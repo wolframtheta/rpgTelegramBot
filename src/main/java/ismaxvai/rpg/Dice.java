@@ -65,7 +65,7 @@ public class Dice {
 			int n = instruction.length();
 			if(n > 5) return 0;
 			int nd = 0;
-			for(int i = 0; i < n; ++n){
+			for(int i = 0; i < n; ++i){
 				char a = instruction.charAt(i);
 				if (a != 'd' && (a < '0' && a > '9')) return 0;
 				else if(a == 'd') {

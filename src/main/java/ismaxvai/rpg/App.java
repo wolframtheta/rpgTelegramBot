@@ -8,7 +8,7 @@ public class App
 {
     public static void main( String[] args )
     {
-    	String tirada = "1d90";
+    	String tirada = "5d20";
     	Dice dau = new Dice();
         System.out.println( dau.fullRolling(tirada) );
     }
