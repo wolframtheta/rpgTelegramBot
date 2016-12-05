@@ -26,20 +26,7 @@
       <artifactId>telegrambots</artifactId>
       <version>2.4.4</version>
    </dependency>
-   <dependency>
-        <groupId>com.stackoverflow</groupId>
-        <artifactId>commons-utils</artifactId>
-        <version>1.0</version>
-        <scope>system</scope>
-        <systemPath>D:\Users\Xavier Marquès\Downloads\JTelegramBot-Builders-v1.1.jar</systemPath>
-    </dependency>
-    <dependency>
-        <groupId>com.stackoverflowsaaaa</groupId>
-        <artifactId>commons-utiladsas</artifactId>
-        <version>1.0</version>
-        <scope>system</scope>
-        <systemPath>D:\Users\Xavier Marquès\Downloads\JTelegramBot-Core-v1.1.jar</systemPath>
-    </dependency>
+   
 	<dependency>
 	    <groupId>org.mariadb.jdbc</groupId>
 	    <artifactId>mariadb-java-client</artifactId>

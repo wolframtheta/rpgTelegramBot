@@ -10,9 +10,6 @@ import org.telegram.telegrambots.TelegramBotsApi;
 import org.telegram.telegrambots.exceptions.TelegramApiException;
 import org.telegram.telegrambots.generics.UpdatesHandler;
 
-import io.fouad.jtb.core.builders.ApiBuilder;
-import io.fouad.jtb.core.builders.KeyboardButtonBuilder;
-
 public class Rpgbot {
 	static String USERNAME = "xvaibot";
 	static String TOKEN = "253251073:AAFT1DnXYpVdzfNS97waRT-Jr4VFWuwSxFw";
